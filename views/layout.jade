@@ -1,0 +1,17 @@
+!!!
+html
+  head
+    title SSEs, Node.js, and Redis
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    != body
+
+    script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js')
+    script(src='http://jquery-json.googlecode.com/files/jquery.json-2.2.min.js')
+    script(type='text/javascript')
+      var source = new EventSource('/update-stream');
+
+      source.addEventListener('message', function(e) {
+        console.log(e);
+        $('ul').append('<li>' + e.data + ' (message id: ' + e.lastEventId + ')</li>');
+      }, false);
