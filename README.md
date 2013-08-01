@@ -23,5 +23,4 @@ Using it...
 1. Open another window and visit http://localhost:8000/fire-event/anything-you-want-here (Page B)
 1. Look at 'Page A' again...and you should see a message including the name of the page you
    visited ('anything-you-want-here')
-   1. Additionally, if you open up `redis-cli` and issue `PUBLISH updates 'some message here'`, you
-      should see your message show up as well.
+   1. Additionally, if you open up `redis-cli` and issue `PUBLISH updates 'some message here'`, you should see your message show up as well.
